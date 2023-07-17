@@ -14,6 +14,4 @@
 @import "@fortawesome/fontawesome-free/css/solid.css";  */ 
 
 
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "Poppins", sans-serif; }
