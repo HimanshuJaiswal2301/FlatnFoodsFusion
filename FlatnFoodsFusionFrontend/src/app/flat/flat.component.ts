@@ -12,7 +12,7 @@ export class FlatComponent implements OnInit,
     @ViewChild('tempButton') buttontemp: any;
     title = 'FlatnFoodsFusion';
   
-    flatForm: FormGroup | undefined;
+    flatForm!: FormGroup;
   constructor(private fb: FormBuilder) {
   }
   

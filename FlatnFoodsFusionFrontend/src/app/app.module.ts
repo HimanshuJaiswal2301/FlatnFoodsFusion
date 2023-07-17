@@ -14,7 +14,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { JwtModule } from '@auth0/angular-jwt';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignupComponent } from './pages/signup/signup.component';
-import { FlatComponent } from './pages/flat/flat.component';
+import { FlatComponent } from './flat/flat.component';
 import { DashboardComponent } from './city/dashboard/dashboard.component';
 import { SidebarComponent } from './city/sidebar/sidebar.component';
 import {MatListModule} from '@angular/material/list';
