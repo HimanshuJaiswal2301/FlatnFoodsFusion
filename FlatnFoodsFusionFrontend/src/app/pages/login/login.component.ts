@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
           }
         );
 
-        this.router.navigate(['/home']);
+        this.router.navigate(['/city']);
         this.toastr.success('Yay! You are logged in.', 'Login Succesful');
       },
       (error) => {

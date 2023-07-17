@@ -15,6 +15,13 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignupComponent } from './pages/signup/signup.component';
 import { FlatComponent } from './pages/flat/flat.component';
+import { DashboardComponent } from './city/dashboard/dashboard.component';
+import { SidebarComponent } from './city/sidebar/sidebar.component';
+import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon'
+import {MatTableModule} from '@angular/material/table';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +30,9 @@ import { FlatComponent } from './pages/flat/flat.component';
     HomeComponent,
     LoginComponent,
     SignupComponent,
-    FlatComponent
+    FlatComponent,
+    DashboardComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +40,11 @@ import { FlatComponent } from './pages/flat/flat.component';
     NgbModule,
     ReactiveFormsModule,
     FormsModule,
+    MatListModule,
+    MatCardModule,
+    MatIconModule,
+    MatTableModule,
+    
     
   
     HttpClientModule,
