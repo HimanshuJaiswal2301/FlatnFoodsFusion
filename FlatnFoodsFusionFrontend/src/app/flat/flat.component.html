@@ -5,7 +5,7 @@
         <!-- Toolbar to add and search flats -->
         <div class="toolbar black-border">
             <div class="add-flats">
-                <button type="button" class="btn btn-outline-success btn-lg">Post Flat AD</button>
+                <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Post Flat AD</button>
             </div>
     
          <div class="search-flats">
@@ -26,10 +26,10 @@
     </div>
 
     <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Launch demo modal
   </button>
-  
+   -->
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -42,25 +42,25 @@
           <form [formGroup]="flatForm">
             <div class="row">
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="FlatDescription">
+                    <input type="text" class="form-control" placeholder="Flat Description" formControlName="FlatDescription">
                 </div>
 
             </div>
             <div class="row mt-3">
                 <div class="col">
-                    <input type="number" class="form-control" placeholder="Price">
+                    <input type="number" class="form-control" placeholder="Price" formControlName="Price">
                 </div>
 
             </div>
         <div class="row mt-3">
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Address">
+                    <input type="text" class="form-control" placeholder="Address" formControlName="Address">
                 </div>
         </div>
 
         <div class="row mt-3">
             <div class="col">
-                <input type="text" class="form-control" placeholder="Contact">
+                <input type="text" class="form-control" placeholder="Contact" formControlName="Contact">
             </div>
     </div>
     
@@ -76,12 +76,12 @@
                     <div class="col">
                         <div class="form-check form-check-inline">
                             <input lass="form-check-input" type="radio"
-                            name="Type" id="Rent" value="r">
+                            name="Type" id="Rent" value="r" formControlName="Type">
                             <label class="form-check-label" for="Rent">Rent </label>
                         </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio"
-                        name="Type" id="Sell" value="s">
+                        name="Type" id="Sell" value="s" formControlName="Type">
                         <label class="form-check-label" for="Sell">Sell</label>
                     </div>
                     </div>
@@ -89,9 +89,16 @@
                 <div class="row mt-3">
                     <div class="col">
                         <label for="Flat Images" class="form-label">Flat Images</label>
-                        <input type="file" class="form-control" id="Flat Images">
+                        <input type="file" class="form-control" id="Flat Images"
+                        #fileInput>
                     </div>
                 </div>
+
+                <div class="row mt-3">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Food Options Nearby" formControlName="FoodOptionsNearby">
+                    </div>
+            </div>
                     
                 </div>
             </div>
@@ -99,7 +106,7 @@
           </form>
         </div>
         <div class="modal-footer"> 
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Confirm Post!</button>
+          <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="modal" data-bs-dismiss="modal">Confirm Post!</button>
         </div>
       </div> 
     </div>

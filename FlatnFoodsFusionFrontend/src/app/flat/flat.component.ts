@@ -12,17 +12,18 @@ export class FlatComponent implements OnInit,
     @ViewChild('tempButton') buttontemp: any;
     title = 'FlatnFoodsFusion';
   
-    flatForm!: FormGroup;
+    flatForm: FormGroup;
   constructor(private fb: FormBuilder) {
   }
   
   ngOnInit(): void {
     this.flatForm= this.fb.group({
-      FlatDescription: this.fb.control('dfd'),
+      FlatDescription: this.fb.control(''),
       Price: this.fb.control(''),
       Address: this.fb.control(''),
       Contact: this.fb.control(''),
       Type: this.fb.control(''),
+      FoodOptionsNearby: this.fb.control(''),
     });
   }
   
