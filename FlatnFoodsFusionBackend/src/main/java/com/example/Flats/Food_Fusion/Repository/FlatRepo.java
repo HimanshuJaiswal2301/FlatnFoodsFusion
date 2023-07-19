@@ -3,7 +3,7 @@ package com.example.Flats.Food_Fusion.Repository;
 import com.example.Flats.Food_Fusion.Model.Flat;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface FlatRepo extends JpaRepository {
+public interface FlatRepo extends JpaRepository <Flat,Integer>{
 
     void deleteFlatById(int id);
 
