@@ -22,7 +22,7 @@ import {MatCardModule} from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon'
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
-
+import { SubflatComponent } from './subflat/subflat.component';
 
 
 @NgModule({
@@ -34,7 +34,8 @@ import {MatButtonModule} from '@angular/material/button';
     SignupComponent,
     FlatComponent,
     DashboardComponent,
-    SidebarComponent
+    SidebarComponent,
+    SubflatComponent,
   ],
   imports: [
     BrowserModule,

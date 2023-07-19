@@ -4,9 +4,11 @@
     
         <!-- Toolbar to add and search flats -->
         <div class="toolbar black-border">
+            <!-- <div class="row"> -->
             <div class="add-flats">
                 <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Post Flat AD</button>
             </div>
+        <!-- </div> -->
     
          <div class="search-flats">
             <input type="search" class="form-control" placeholder="Search Flats">
@@ -16,11 +18,18 @@
     
         <!-- Area to display all the flats -->
         <div class="flats">
-            <div class="row mt-5">
+            <!-- <div class="row mt-5">
                 <div class="col text-center">
                     <span class="text-secondary fs-2 fw-bold fst-italic">There are no flats Added!" </span> 
                 </div>
+            </div> -->
+        
+        <div class="row mt-8">
+            <div class="col">
+                <app-subflat></app-subflat>
             </div>
+        </div>
+
         </div>
     </main>
     </div>
