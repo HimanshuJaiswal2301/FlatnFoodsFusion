@@ -9,6 +9,7 @@
           class="btn btn-outline-success btn-lg"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
+          routerLink="/add-flat"
         >
           Post Flat AD
         </button>
@@ -43,7 +44,7 @@
   </button>
    -->
 <!-- Modal -->
-<div
+<!-- <div
   class="modal fade"
   id="exampleModal"
   tabindex="-1"
@@ -61,8 +62,9 @@
           aria-label="Close"
         ></button>
       </div>
-      <div class="modal-body">
-        <form [formGroup]="flatForm">
+      
+<div class="modal-body">
+        <form [formGroup]="flatForm" (submit)="addFlat()">
           <div class="row">
             <div class="col">
               <input
@@ -105,9 +107,8 @@
             </div>
           </div>
 
-          <!-- Personal Information -->
-
-          <div class="row mt-3">
+           Personal Information -->
+          <!-- <div class="row mt-3">
             <div class="col">
 
 
@@ -115,7 +116,7 @@
                     <div class="col">
                         <input type="text" class="form-control" placeholder="Type" formControlName="Address">
                     </div>
-            </div>
+            </div> -->
               <!-- <div class="row">
                 <h6 class="text-secondary">Type</h6>
               </div>
@@ -159,7 +160,7 @@
                 </div> -->
               <!-- </div> -->
 
-              <div class="row mt-3">
+              <!-- <div class="row mt-3">
                 <div class="col">
                     <input type="text" class="form-control" placeholder="Image" formControlName="Image">
                 </div>
@@ -177,19 +178,19 @@
               </div>
             </div>
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
+           <div class="modal-footer">
         <button
-          type="button"
+          type="submit"
           class="btn btn-outline-success btn-lg"
           data-bs-toggle="modal"
           data-bs-dismiss="modal"
-          (click)="(addFlat)"
         >
           Confirm Post!
         </button>
       </div>
+        </form>
+      </div>
+     
     </div>
   </div>
-</div>
+</div> --> 

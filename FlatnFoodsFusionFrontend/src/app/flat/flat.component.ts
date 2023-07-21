@@ -78,20 +78,18 @@ clearForm(){
   // this.fileInput.nativeElement.value='';
 }
 addFlat(){
-  let flat: Flat={
-    address: this.Address.value,
-    contact: this.Contact.value,
-    description: this.Description.value,
-    price: this.Price.value,
-    // type: this.Type.value,
-    food: this.Food.value,
-    id: 0,
-    image:this.Image.value,
-  }
-  this.flatService.postFlat(flat).subscribe((data:any)=>{
-    this.flat.unshift(data);
-    this.clearForm();
-  })
+  // let flat: Flat={
+  //   address: this.Address.value,
+  //   contact: this.Contact.value,
+  //   description: this.Description.value,
+  //   price: this.Price.value,
+  //   // type: this.Type.value,
+  //   food: this.Food.value,
+  //   id: 0,
+  //   image:this.Image.value,
+  // }
+  
+  console.log(this.flatForm.value)
 }
 
 }

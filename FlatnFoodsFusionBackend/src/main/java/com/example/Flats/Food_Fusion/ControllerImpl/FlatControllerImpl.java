@@ -10,23 +10,29 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/flat")
+
+@CrossOrigin("*")
 public class FlatControllerImpl {
     private final FlatServiceImpl flatService;
 
     public FlatControllerImpl(FlatServiceImpl flatService) {
         this.flatService = flatService;
     }
+
     @GetMapping("/all")
     public ResponseEntity<List<Flat>> getAllFlats(){
         List<Flat> flats = flatService.findallFlats();
         return new ResponseEntity<>(flats, HttpStatus.OK);
     }
+
     @GetMapping("/flat/{id}")
     public ResponseEntity<Flat> getFlatById(@PathVariable("id")int id){
         Flat flat = flatService.findFlatById(id);
         return new ResponseEntity<>(flat,HttpStatus.OK);
     }
+
     @PostMapping("/add")
+
 
     public ResponseEntity<Flat> addFlat(@RequestBody  Flat flat){
         Flat newFlat = flatService.addFlat(flat);
