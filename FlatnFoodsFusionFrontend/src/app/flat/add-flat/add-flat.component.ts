@@ -18,6 +18,7 @@ export class AddFlatComponent implements OnInit{
     type:'',
     image:'',
     food:''}
+flats: any;
 
 
   
@@ -41,6 +42,7 @@ export class AddFlatComponent implements OnInit{
           food:''}
         console.log(data);
         this.router.navigate(['/city']);
+        this.toastr.success("Successfully Added the flat!");
         
       },
       (error)=>{

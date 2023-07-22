@@ -1,76 +1,82 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
+ FormBuilder,
+ FormControl,
+ FormGroup,
+ Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css'],
+ selector: 'app-signup',
+ templateUrl: './signup.component.html',
+ styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
-  registerForm!: FormGroup;
-  errorMessage!: String;
+ registerForm!: FormGroup;
+ errorMessage!: String;
 
-  constructor(
-    private fb: FormBuilder,
-    private authService: AuthService,
-    private router: Router,
-    private toastr: ToastrService
-  ) {}
 
-  ngOnInit(): void {
-    this.registerForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(1)]],
-      userName: ['', [Validators.required, Validators.minLength(1)]],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      terms: ['', [Validators.required, this.checkTerms.bind(this)]],
-    });
-  }
+ constructor(
+   private fb: FormBuilder,
+   private authService: AuthService,
+   private router: Router,
+   private toastr: ToastrService
+ ) {}
 
-  checkTerms(control: FormControl): { [s: string]: boolean } | null {
-    const value = control.value;
-    if (!value) {
-      return { required: true };
-    }
-    return null;
-  }
 
-  onSubmit() {
-    if (this.registerForm.valid) {
-      this.authService.register(this.registerForm.value).subscribe(
-        (response) => {
-          console.log('Registration successful!');
-          console.log(response);
-          this.router.navigate(['/login']);
-          this.toastr.success('Please log In', 'Registration successful', {
-            positionClass: 'toast-bottom-right',
-          });
-        },
-        (error) => {
-          this.errorMessage = 'Username or Email already exists!';
-          console.log('Registration failed!');
-          console.log(error);
-          this.toastr.error('WARNING: Username or Email already exists!');
-        }
-      );
-    } else {
-      this.toastr.warning(
-        'Please fill all the fields accordingly',
-        'Invalid form'
-      );
-    }
-  }
+ ngOnInit(): void {
+   this.registerForm = this.fb.group({
+     name: ['', [Validators.required, Validators.minLength(1)]],
+     userName: ['', [Validators.required, Validators.minLength(1)]],
+     email: ['', [Validators.required, Validators.email]],
+     password: ['', [Validators.required, Validators.minLength(6)]],
+     terms: ['', [Validators.required, this.checkTerms.bind(this)]],
+   });
+ }
 
-  goToHome() {
-    this.router.navigate(['/home']);
-  }
+
+ checkTerms(control: FormControl): { [s: string]: boolean } | null {
+   const value = control.value;
+   if (!value) {
+     return { required: true };
+   }
+   return null;
+ }
+
+
+ onSubmit() {
+   if (this.registerForm.valid) {
+     this.authService.register(this.registerForm.value).subscribe(
+       (response) => {
+         console.log('Registration successful!');
+         console.log(response);
+         this.router.navigate(['/login']);
+         this.toastr.success('Please log In', 'Registration successful', {
+           positionClass: 'toast-bottom-right',
+         });
+       },
+       (error) => {
+         this.errorMessage = 'Username or Email already exists!';
+         console.log('Registration failed!');
+         console.log(error);
+         this.toastr.error('WARNING: Username or Email already exists!');
+       }
+     );
+   } else {
+     this.toastr.warning(
+       'Please fill all the fields accordingly',
+       'Invalid form'
+     );
+   }
+ }
+
+
+ goToHome() {
+   this.router.navigate(['/home']);
+ }
 }

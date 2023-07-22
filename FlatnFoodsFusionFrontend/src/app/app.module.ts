@@ -25,7 +25,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { SubflatComponent } from './subflat/subflat.component';
 import { AddFlatComponent } from './flat/add-flat/add-flat.component';
 import {MatInputModule} from '@angular/material/input';
-
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio'; ;
 
 @NgModule({
   declarations: [
@@ -47,6 +48,8 @@ import {MatInputModule} from '@angular/material/input';
     NgbModule,
     ReactiveFormsModule,
     FormsModule,
+    MatSelectModule,
+    MatRadioModule,
     MatListModule,
     MatCardModule,
     MatIconModule,

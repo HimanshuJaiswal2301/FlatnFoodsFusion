@@ -24,11 +24,11 @@ export class FlatService {
   }
  
   getFlats(): Observable<any> {
-    const token = localStorage.getItem('token');
+    // const token = localStorage.getItem('token');
     return this.http.get(`${this.baseUrl}/all` ,{
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+      // headers: {
+      //   Authorization: `Bearer ${token}`,
+      // },
     });
   }
 

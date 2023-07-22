@@ -1,0 +1,5 @@
+.signup-container {
+    position: relative;
+    top: -96px; /* Adjust this value based on the height of your login component */
+  }
+ 
