@@ -2,7 +2,6 @@
   <main class="black-border">
     <!-- Toolbar to add and search flats -->
     <div class="toolbar black-border">
-      <!-- <div class="row"> -->
       <div class="add-flats">
         <button
           type="button"
@@ -14,7 +13,6 @@
           Post Flat AD
         </button>
       </div>
-      <!-- </div> -->
 
       <div class="search-flats">
         <input type="search" class="form-control" placeholder="Search Flats" />
@@ -23,12 +21,6 @@
 
     <!-- Area to display all the flats -->
     <div class="flats">
-      <!-- <div class="row mt-5">
-                <div class="col text-center">
-                    <span class="text-secondary fs-2 fw-bold fst-italic">There are no flats Added!" </span> 
-                </div>
-            </div> -->
-
       <div class="row mt-8">
         <div class="col">
           <app-subflat></app-subflat>
@@ -37,160 +29,3 @@
     </div>
   </main>
 </div>
-
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-  </button>
-   -->
-<!-- Modal -->
-<!-- <div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Enter Details</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      
-<div class="modal-body">
-        <form [formGroup]="flatForm" (submit)="addFlat()">
-          <div class="row">
-            <div class="col">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Flat Description"
-                formControlName="FlatDescription"
-              />
-            </div>
-          </div>
-          <div class="row mt-3">
-            <div class="col">
-              <input
-                type="number"
-                class="form-control"
-                placeholder="Price"
-                formControlName="Price"
-              />
-            </div>
-          </div>
-          <div class="row mt-3">
-            <div class="col">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Address"
-                formControlName="Address"
-              />
-            </div>
-          </div>
-
-          <div class="row mt-3">
-            <div class="col">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Contact"
-                formControlName="Contact"
-              />
-            </div>
-          </div>
-
-           Personal Information -->
-          <!-- <div class="row mt-3">
-            <div class="col">
-
-
-                <div class="row mt-3">
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="Type" formControlName="Address">
-                    </div>
-            </div> -->
-              <!-- <div class="row">
-                <h6 class="text-secondary">Type</h6>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <div class="form-check form-check-inline">
-                    <input
-                      lass="form-check-input"
-                      type="radio"
-                      name="Type"
-                      id="Rent"
-                      value="r"
-                      formControlName="Type"
-                    />
-                    <label class="form-check-label" for="Rent">Rent </label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="Type"
-                      id="Sell"
-                      value="s"
-                      formControlName="Type"
-                    />
-                    <label class="form-check-label" for="Sell">Sell</label>
-                  </div>
-                </div> -->
-              <!-- </div> -->
-              <!-- <div class="row mt-3">
-                <div class="col">
-                  <label for="Flat Images" class="form-label"
-                    >Flat Images</label
-                  >
-                  <input
-                    type="file"
-                    class="form-control"
-                    id="Flat Images"
-                    #fileInput
-                  />
-                </div> -->
-              <!-- </div> -->
-
-              <!-- <div class="row mt-3">
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Image" formControlName="Image">
-                </div>
-        </div>
-
-              <div class="row mt-3">
-                <div class="col">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Food Options Nearby"
-                    formControlName="FoodOptionsNearby"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-           <div class="modal-footer">
-        <button
-          type="submit"
-          class="btn btn-outline-success btn-lg"
-          data-bs-toggle="modal"
-          data-bs-dismiss="modal"
-        >
-          Confirm Post!
-        </button>
-      </div>
-        </form>
-      </div>
-     
-    </div>
-  </div>
-</div> --> 

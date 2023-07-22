@@ -14,7 +14,7 @@ export class FlatService {
   // getFlats(){
   //   return this.http.get<Flat[]>(this.baseUrl);
   // }
-  postFlat(flat:Flat){
+  postFlat(flat:any){
     const token = localStorage.getItem('token');
     return this.http.post(`${this.baseUrl}/add`,flat ,{
       headers: {
@@ -31,4 +31,8 @@ export class FlatService {
       },
     });
   }
+
+  //  public addFlat(flat: any){
+  //   return this.http.post(`${baseUrl}/add`,flat);
+  // }
 }

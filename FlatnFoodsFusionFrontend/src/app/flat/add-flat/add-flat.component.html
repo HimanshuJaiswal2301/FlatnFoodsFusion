@@ -1,59 +1,81 @@
 <mat-card class="min-h-screen-80">
-<mat-card-title style="color: rgb(255, 255, 0); margin-left: 800px; margin-top: 20px;">Add New Flat</mat-card-title>
-<div class="container mt-5">
+  <mat-card-title
+    style="color: rgb(255, 255, 0); margin-left: 800px; margin-top: 20px"
+    >Add New Flat</mat-card-title
+  >
+  <div class="container mt-5">
     <div class="row">
-        <div class="col-md-8 offset-md-2">
+      <div class="col-md-8 offset-md-2">
+        <form class="example-form" (ngSubmit)="onSubmit()">
+          <mat-form-field class="w100">
+            <mat-label>Description</mat-label>
+            <input
+              matInput
+              [(ngModel)]="flatData.description"
+              name="description"
+              placeholder="Description"
+            />
+          </mat-form-field>
+          <mat-form-field class="w100">
+            <mat-label>Address</mat-label>
+            <input
+              matInput
+              [(ngModel)]="flatData.address"
+              name="address"
+              placeholder="Address"
+            />
+          </mat-form-field>
+          <mat-form-field class="w100">
+            <mat-label>Contact</mat-label>
+            <input
+              matInput
+              [(ngModel)]="flatData.contact"
+              name="contact"
+              placeholder="Contact"
+            />
+          </mat-form-field>
+          <mat-form-field class="w100">
+            <mat-label>Price</mat-label>
+            <input
+              matInput
+              [(ngModel)]="flatData.price"
+              name="price"
+              placeholder="Price"
+            />
+          </mat-form-field>
+          <mat-form-field class="w100">
+            <mat-label>Image</mat-label>
+            <input
+              matInput
+              [(ngModel)]="flatData.image"
+              name="image"
+              placeholder="Image"
+            />
+          </mat-form-field>
+          <mat-form-field class="w100">
+            <mat-label>Food</mat-label>
+            <input
+              matInput
+              [(ngModel)]="flatData.food"
+              name="food"
+              placeholder="Food Nearby"
+            />
+          </mat-form-field>
+          <mat-form-field class="w100">
+            <mat-label>Type</mat-label>
+            <input
+              matInput
+              [(ngModel)]="flatData.type"
+              name="type"
+              placeholder="Type-Rent/Sell"
+            />
+          </mat-form-field>
 
-            <form class="example-form">
-                <mat-form-field class="w100">
-                  <mat-label>Description</mat-label>
-                  <input matInput placeholder="Description">
-                </mat-form-field>
-                <mat-form-field class="w100">
-                    <mat-label>Address</mat-label>
-                    <input matInput placeholder="Address">
-                  </mat-form-field>
-                  <mat-form-field class="w100">
-                    <mat-label>Contact</mat-label>
-                    <input matInput placeholder="Contact">
-                  </mat-form-field>
-                  <mat-form-field class="w100">
-                    <mat-label>Price</mat-label>
-                    <input matInput placeholder="Price">
-                  </mat-form-field>
-                  <mat-form-field class="w100">
-                    <mat-label>Image</mat-label>
-                    <input matInput placeholder="Image">
-                  </mat-form-field>
-                  <mat-form-field class="w100">
-                    <mat-label>Food</mat-label>
-                    <input matInput placeholder="Food Nearby">
-                  </mat-form-field>
-                  <mat-form-field class="w100">
-                    <mat-label>Type</mat-label>
-                    <input matInput placeholder="Type">
-                  </mat-form-field>
-
-                  <div class="container text-center mt15">
-                    <button mat-button class="button">Add</button>
-                </div>
-
-
-                </form>
-              
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-</div>
-
+          <div class="container text-center mt15">
+            <button mat-raised-button color="accent" class="button">Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </mat-card>
