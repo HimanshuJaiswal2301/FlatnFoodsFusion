@@ -26,5 +26,7 @@ public class Flat implements Serializable {
     private String food;
     private String type;
     private Integer contact;
+    @Lob
     private String image;
+    private String posted;
 }

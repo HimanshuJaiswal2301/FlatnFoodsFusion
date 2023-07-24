@@ -6,52 +6,50 @@ import { FlatService } from 'src/app/services/flat/flat.service';
 @Component({
   selector: 'app-add-flat',
   templateUrl: './add-flat.component.html',
-  styleUrls: ['./add-flat.component.css']
+  styleUrls: ['./add-flat.component.css'],
 })
-export class AddFlatComponent implements OnInit{
-  
-  flatData={
-    description:'',
-    address:'',
-    contact:null,
-    price:null,
-    type:'',
-    image:'',
-    food:''}
-flats: any;
+export class AddFlatComponent implements OnInit {
+  flatData = {
+    description: '',
+    address: '',
+    contact: null,
+    price: null,
+    type: '',
+    image: '',
+    food: '',
+    posted: ''
+  };
+  flats: any;
 
+  constructor(
+    private _flat: FlatService,
+    private toastr: ToastrService,
+    private router: Router
+  ) {}
 
-  
+  ngOnInit(): void {}
 
-  constructor(private _flat:FlatService,private toastr:ToastrService,private router:Router){}
-
-  ngOnInit(): void {
-    
-  }
-
-  onSubmit( ){
+  onSubmit() {
+    this.flatData.posted = new Date().toISOString();
     this._flat.postFlat(this.flatData).subscribe(
-      (data:any) => {
-        this.flatData={
-          description:'',
-          address:'',
-          contact:null,
-          price:null,
-          type:'',
-          image:'',
-          food:''}
+      (data: any) => {
+        this.flatData = {
+          description: '',
+          address: '',
+          contact: null,
+          price: null,
+          type: '',
+          image: '',
+          food: '',
+          posted:''
+        };
         console.log(data);
         this.router.navigate(['/city']);
-        this.toastr.success("Successfully Added the flat!");
-        
+        this.toastr.success('Successfully Added the flat!');
       },
-      (error)=>{
+      (error) => {
         console.log(error);
-        
       }
-    )
+    );
   }
-  
-
-  
-  }
+}
