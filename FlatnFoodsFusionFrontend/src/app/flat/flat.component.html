@@ -15,7 +15,7 @@
       </div>
 
       <div class="search-flats">
-        <input type="search" class="form-control" placeholder="Search Flats" />
+        <input type="search" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="Search Flats" />
       </div>
     </div>
 

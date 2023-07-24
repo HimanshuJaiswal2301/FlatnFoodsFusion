@@ -1,20 +1,25 @@
-<mat-card class="min-h-screen-80">
-  <mat-card-title
-    style="color: black; margin-left: 800px; margin-top: 20px"
-    >Add New Flat</mat-card-title
-  >
+<mat-card class="bg-white min-h-screen-80">
+  <mat-card-title class="text-white bg-black px-4 py-2 text-xl font-bold">
+    Add New Flat
+  </mat-card-title>
+
   <div class="container mt-5">
     <div class="row">
       <div class="col-md-8 offset-md-2">
         <form class="example-form" (ngSubmit)="onSubmit()">
           <mat-form-field class="w100">
             <mat-label>City</mat-label>
-            <input
-              matInput
+            <mat-select
               [(ngModel)]="flatData.description"
               name="description"
-              placeholder="Enter the City"
-            />
+              placeholder="Select City"
+              class="text-black"
+            >
+              <mat-option value="Ahmedabad">Ahmedabad</mat-option>
+              <mat-option value="Bengaluru">Bengaluru</mat-option>
+              <mat-option value="Chandigarh">Chandigarh</mat-option>
+              <mat-option value="Delhi">Delhi</mat-option>
+            </mat-select>
           </mat-form-field>
           <mat-form-field class="w100">
             <mat-label>Address</mat-label>
@@ -23,6 +28,7 @@
               [(ngModel)]="flatData.address"
               name="address"
               placeholder="Address"
+              class="text-black"
             />
           </mat-form-field>
           <mat-form-field class="w100">
@@ -32,6 +38,7 @@
               [(ngModel)]="flatData.contact"
               name="contact"
               placeholder="Contact"
+              class="text-black"
             />
           </mat-form-field>
           <mat-form-field class="w100">
@@ -41,6 +48,7 @@
               [(ngModel)]="flatData.price"
               name="price"
               placeholder="Price"
+              class="text-black"
             />
           </mat-form-field>
           <mat-form-field class="w100">
@@ -50,6 +58,7 @@
               [(ngModel)]="flatData.image"
               name="image"
               placeholder="Image"
+              class="text-black"
             />
           </mat-form-field>
           <mat-form-field class="w100">
@@ -59,6 +68,7 @@
               [(ngModel)]="flatData.food"
               name="food"
               placeholder="Food Nearby"
+              class="text-black"
             />
           </mat-form-field>
           <mat-form-field class="w100">
@@ -68,11 +78,18 @@
               [(ngModel)]="flatData.type"
               name="type"
               placeholder="Type-Rent/Sell"
+              class="text-black"
             />
           </mat-form-field>
 
-          <div class="container text-center mt15">
-            <button mat-raised-button color="accent" class="button">Add</button>
+          <div class="container text-center mt-5">
+            <button
+              mat-raised-button
+              color="accent"
+              class="bg-black text-white px-4 py-2 rounded-md font-medium"
+            >
+              Add
+            </button>
           </div>
         </form>
       </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FlatService } from '../services/flat/flat.service';
 import { Flat } from '../model/Flat';
+import { Lightbox } from 'ngx-lightbox'; // Import Lightbox from ngx-lightbox
 
 @Component({
   selector: 'app-subflat',
@@ -8,8 +9,7 @@ import { Flat } from '../model/Flat';
   styleUrls: ['./subflat.component.css']
 })
 export class SubflatComponent implements OnInit {
-flatEntries: any;
-  constructor(private _flat: FlatService) {}
+  constructor(private _flat: FlatService, private lightbox: Lightbox) {} // Inject Lightbox service
 
   flats: Flat[] = [];
   flatData: any = {}; // Variable to store new form data
@@ -36,4 +36,10 @@ flatEntries: any;
     this.flats.push(this.flatData);
     this.flatData = {}; // Clear the flatData object for a fresh form submission
   }
+
+  // Method to open the image modal when an image is clicked
+  // openImageModal(imageUrl: string) {
+  //   const album = [{ src: imageUrl, caption: '', thumb: '' }];
+  //   this.lightbox.open(album, 0);
+  // }
 }

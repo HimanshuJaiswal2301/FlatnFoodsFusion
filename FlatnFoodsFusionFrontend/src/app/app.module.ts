@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { formatDistanceToNow } from 'date-fns';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,7 +27,11 @@ import { SubflatComponent } from './subflat/subflat.component';
 import { AddFlatComponent } from './flat/add-flat/add-flat.component';
 import {MatInputModule} from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { MatRadioModule } from '@angular/material/radio'; ;
+import { MatRadioModule } from '@angular/material/radio'; 
+import { FilterPipe } from './filter.pipe';
+import { LightboxModule } from 'ngx-lightbox';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +45,8 @@ import { MatRadioModule } from '@angular/material/radio'; ;
     SidebarComponent,
     SubflatComponent,
     AddFlatComponent,
+    FilterPipe,
+    
   ],
   imports: [
     BrowserModule,
@@ -56,6 +63,8 @@ import { MatRadioModule } from '@angular/material/radio'; ;
     MatTableModule,
     MatButtonModule,
     MatInputModule,
+    LightboxModule,
+    MatExpansionModule,
     
     
   

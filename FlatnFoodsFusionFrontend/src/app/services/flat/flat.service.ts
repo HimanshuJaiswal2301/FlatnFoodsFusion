@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Flat } from 'src/app/model/Flat';
 
 @Injectable({
@@ -10,7 +10,7 @@ export class FlatService {
 
   baseUrl= 'http://localhost:8080/flat';
   constructor( private http:HttpClient) { }
-
+  public search = new BehaviorSubject<String>("");
   // getFlats(){
   //   return this.http.get<Flat[]>(this.baseUrl);
   // }

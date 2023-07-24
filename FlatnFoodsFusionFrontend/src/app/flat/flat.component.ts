@@ -13,5 +13,19 @@ export class FlatComponent
    {
     @ViewChild('fileInput') fileInput: any;
     
- 
+ public searchTerm:String='';
+  totalItem: any;
+ constructor(private flatService : FlatService) { }
+
+ ngOnInit(): void {
+  this.flatService.getFlats()
+  .subscribe(res=>{
+    this.totalItem = res.length;
+  })
+ }
+ search(event: any){
+  this.searchTerm=(event.target as HTMLInputElement).value;
+  console.log(this.searchTerm);
+  this.flatService.search.next(this.searchTerm);
+ }
 }

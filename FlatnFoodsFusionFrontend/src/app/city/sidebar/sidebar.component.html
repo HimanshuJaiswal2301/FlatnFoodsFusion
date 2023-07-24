@@ -1,19 +1,32 @@
-<mat-card class="custom-theme min-h-screen-80">
-  <mat-action-list>
-    <button routerLink="/home" mat-list-item>
-      <mat-icon>home</mat-icon>Home
-    </button>
-    <button mat-list-item routerLink="/flat">
-      <mat-icon>A</mat-icon>Ahmedabad
-    </button>
-    <button mat-list-item routerLink="/bengaluru">
-      <mat-icon>B</mat-icon>Bengaluru
-    </button>
-    <button mat-list-item routerLink="/chandigarh">
-      <mat-icon>C</mat-icon>Chandigarh
-    </button>
-    <button mat-list-item routerLink="/delhi">
-      <mat-icon>D</mat-icon>Delhi
-    </button>
-  </mat-action-list>
-</mat-card>
+
+  <!-- <button routerLink="/home" mat-list-item>
+    <mat-icon>home</mat-icon>Home
+  </button> -->
+  <mat-accordion>
+    <!-- Main Button: All Cities -->
+    <mat-expansion-panel style="margin-top: 55px;">
+      <mat-expansion-panel-header>
+        <mat-panel-title>All Cities</mat-panel-title>
+      </mat-expansion-panel-header>
+      <!-- City Buttons -->
+      <mat-action-list>
+        <!-- <button routerLink="/home" mat-list-item>
+          <mat-icon>home</mat-icon>Home
+        </button> -->
+        <button mat-list-item routerLink="/flat">
+          <mat-icon>A</mat-icon>Ahmedabad
+        </button>
+        <button mat-list-item routerLink="/bengaluru">
+          <mat-icon>B</mat-icon>Bengaluru
+        </button>
+        <button mat-list-item routerLink="/chandigarh">
+          <mat-icon>C</mat-icon>Chandigarh
+        </button>
+        <button mat-list-item routerLink="/delhi">
+          <mat-icon>D</mat-icon>Delhi
+        </button>
+        <!-- Add more city buttons here as needed -->
+      </mat-action-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+

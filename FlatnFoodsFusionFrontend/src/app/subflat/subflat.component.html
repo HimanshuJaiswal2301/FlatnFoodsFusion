@@ -10,12 +10,14 @@
 
       <div class="row g-0">
         <!-- Left side: Image -->
-        <div class="col-md-2 d-flex justify-content-center align-items-center">
-          <img src= {{flatData.image}} alt="Flat Image" class="flats">
+        <div class="col-md-2 d-flex align-items-center">
+          <div class="image-block">
+            <img src="{{ flatData.image }}" alt="Flat Image" class="flats">
+          </div>
         </div>
 
         <!-- Right side: Details -->
-        <div class="col ps-2">
+        <div class="col-md-10">
           <div class="row g-0 mt-3">
             <div class="col-md-6">
               <table class="table table-bordered table-hover table-striped">
@@ -31,7 +33,7 @@
                   </tr>
                   <tr>
                     <td>Type</td>
-                    <td>{{ flatData.type }} </td>
+                    <td>{{ flatData.type }}</td>
                   </tr>
                   <tr>
                     <td>Price</td>
@@ -51,10 +53,10 @@
                 <tbody class="black-border">
                   <tr>
                     <td>Contact</td>
-                    <td>{{ flatData.contact }} </td>
+                    <td>{{ flatData.contact }}</td>
                   </tr>
                   <tr>
-                    <td>Food Options Nearby</td>
+                    <td>Food Options</td>
                     <td>{{ flatData.food }}</td>
                   </tr>
                   <tr>
