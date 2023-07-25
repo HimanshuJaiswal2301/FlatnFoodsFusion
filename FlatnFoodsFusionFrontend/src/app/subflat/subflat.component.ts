@@ -17,7 +17,7 @@ export class SubflatComponent implements OnInit {
 
   startPrice: number;
   endPrice: number;
-
+  priceRange: number[] = [0, 100000];
   ngOnInit(): void {
     this.getFlats();
   }

@@ -31,7 +31,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { FilterPipe } from './filter.pipe';
 
 import { MatExpansionModule } from '@angular/material/expansion';
-
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -63,7 +63,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatTableModule,
     MatButtonModule,
     MatInputModule,
-   
+    MatSliderModule,
     MatExpansionModule,
     
     

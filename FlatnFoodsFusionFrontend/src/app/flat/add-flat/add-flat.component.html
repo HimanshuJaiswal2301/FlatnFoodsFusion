@@ -73,13 +73,15 @@
           </mat-form-field>
           <mat-form-field class="w100">
             <mat-label>Type</mat-label>
-            <input
-              matInput
+            <mat-select
               [(ngModel)]="flatData.type"
               name="type"
-              placeholder="Type-Rent/Sell"
+              placeholder="Select Type"
               class="text-black"
-            />
+            >
+              <mat-option value="Rent">Rent</mat-option>
+              <mat-option value="Sell">Sell</mat-option>
+            </mat-select>
           </mat-form-field>
 
           <div class="container text-center mt-5">

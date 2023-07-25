@@ -1,9 +1,29 @@
 
 <div class="container-fluid">
-  <form (ngSubmit)="onCustomFilterSubmit(startPrice, endPrice)">
-    <input placeholder="start" type="number" [(ngModel)]="startPrice" name="startPrice"/>
-    <input placeholder="end" type="number" [(ngModel)]="endPrice" name="endPrice"/>
-    <button type="submit">Filter</button>
+  <form class="row g-3" (ngSubmit)="onCustomFilterSubmit(startPrice,endPrice)">
+    <div class="col-md-4">
+      <div class="form-group mb-3">
+        <label for="startPrice" class="form-label">Start Price:</label>
+        <div class="input-group">
+          <span class="input-group-text">₹</span>
+        <input type="number" class="form-control" [(ngModel)]="startPrice" name="startPrice" step="1000" min="0"/>
+      </div>
+    </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group mb-3">
+        <label for="endPrice" class="form-label">End Price:</label>
+        <div class="input-group">
+          <span class="input-group-text">₹</span>
+        <input type="number" class="form-control" [(ngModel)]="endPrice" name="endPrice" step="1000" min="0"/>
+      </div>
+    </div>
+    </div>
+    <div class="col-md-4.5">
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary" style="background-color: #007bff;">Submit</button>
+      </div>
+    </div>
   </form>
 </div>
 <div class="container-fluid">
