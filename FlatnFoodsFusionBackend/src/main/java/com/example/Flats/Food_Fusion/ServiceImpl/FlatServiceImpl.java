@@ -30,4 +30,14 @@ public class FlatServiceImpl {
     public void deleteFlatById(int id){
         flatRepo.deleteFlatById(id);
     }
+
+    public List<Flat> filterCustom(Integer startPrice, Integer endPrice) {
+        List<Flat> flats = flatRepo.filterCustom(startPrice, endPrice);
+        return flats;
+    }
+
+    public Flat getFlatById(Integer id) {
+        Flat flat = flatRepo.findFlatFlatById(id);
+        return flat;
+    }
 }
