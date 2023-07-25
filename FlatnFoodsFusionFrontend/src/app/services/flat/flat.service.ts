@@ -24,15 +24,24 @@ export class FlatService {
   }
  
   getFlats(): Observable<any> {
-    // const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token');
     return this.http.get(`${this.baseUrl}/all` ,{
-      // headers: {
-      //   Authorization: `Bearer ${token}`,
-      // },
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     });
   }
 
   //  public addFlat(flat: any){
   //   return this.http.post(`${baseUrl}/add`,flat);
   // }
+
+  customFilter(startPrice: number, endPrice: number): Observable<any>{
+    const token = localStorage.getItem('token');
+    return this.http.get(`${this.baseUrl}/filter/custom/${startPrice}/${endPrice}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    })
+  }
 }

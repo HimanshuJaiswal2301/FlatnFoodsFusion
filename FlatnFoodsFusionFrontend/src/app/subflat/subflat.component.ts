@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FlatService } from '../services/flat/flat.service';
 import { Flat } from '../model/Flat';
-import { Lightbox } from 'ngx-lightbox'; // Import Lightbox from ngx-lightbox
+import { HttpErrorResponse } from '@angular/common/http';
+ // Import Lightbox from ngx-lightbox
 
 @Component({
   selector: 'app-subflat',
@@ -9,10 +10,13 @@ import { Lightbox } from 'ngx-lightbox'; // Import Lightbox from ngx-lightbox
   styleUrls: ['./subflat.component.css']
 })
 export class SubflatComponent implements OnInit {
-  constructor(private _flat: FlatService, private lightbox: Lightbox) {} // Inject Lightbox service
+  constructor(private _flat: FlatService) {} // Inject Lightbox service
 
   flats: Flat[] = [];
   flatData: any = {}; // Variable to store new form data
+
+  startPrice: number;
+  endPrice: number;
 
   ngOnInit(): void {
     this.getFlats();
@@ -35,6 +39,18 @@ export class SubflatComponent implements OnInit {
     // Assuming you are using a form with [(ngModel)]="flatData" for input fields
     this.flats.push(this.flatData);
     this.flatData = {}; // Clear the flatData object for a fresh form submission
+  }
+
+  onCustomFilterSubmit(startPrice: number, endPrice: number){
+    this._flat.customFilter(startPrice, endPrice).subscribe(
+      (res) => {
+        this.flats = res;
+      },
+      (error: HttpErrorResponse) => {
+        console.log(error);
+        
+      }
+    )
   }
 
   // Method to open the image modal when an image is clicked

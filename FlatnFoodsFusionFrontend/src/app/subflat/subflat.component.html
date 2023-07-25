@@ -1,3 +1,11 @@
+
+<div class="container-fluid">
+  <form (ngSubmit)="onCustomFilterSubmit(startPrice, endPrice)">
+    <input placeholder="start" type="number" [(ngModel)]="startPrice" name="startPrice"/>
+    <input placeholder="end" type="number" [(ngModel)]="endPrice" name="endPrice"/>
+    <button type="submit">Submit</button>
+  </form>
+</div>
 <div class="container-fluid">
   <!-- Loop through the flatEntries array -->
   <ng-container *ngFor="let flatData of flats; index as i">

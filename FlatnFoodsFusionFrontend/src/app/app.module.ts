@@ -29,7 +29,7 @@ import {MatInputModule} from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio'; 
 import { FilterPipe } from './filter.pipe';
-import { LightboxModule } from 'ngx-lightbox';
+
 import { MatExpansionModule } from '@angular/material/expansion';
 
 
@@ -63,7 +63,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatTableModule,
     MatButtonModule,
     MatInputModule,
-    LightboxModule,
+   
     MatExpansionModule,
     
     
