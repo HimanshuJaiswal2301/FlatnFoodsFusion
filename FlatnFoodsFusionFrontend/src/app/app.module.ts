@@ -7,7 +7,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
-import { formatDistanceToNow } from 'date-fns';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -31,7 +30,6 @@ import { MatRadioModule } from '@angular/material/radio';
 import { FilterPipe } from './filter.pipe';
 
 import { MatExpansionModule } from '@angular/material/expansion';
-import { LightboxModule } from 'ngx-lightbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TimeAgoPipe } from './time-ago.pipe';
 @NgModule({
@@ -65,7 +63,6 @@ import { TimeAgoPipe } from './time-ago.pipe';
     MatTableModule,
     MatButtonModule,
     MatInputModule,
-    LightboxModule,
     MatExpansionModule,
     MatFormFieldModule,
     

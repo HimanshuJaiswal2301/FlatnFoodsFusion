@@ -35,8 +35,22 @@
       <!-- Description -->
       <div class="col-md-12 mb-3 text-center">
         <span class="desc">{{ flatData.description }}</span>
-      </div>
+ <!-- Heart symbol and number indicator -->
+ <div class="d-flex align-items-center justify-content-end">
+  <!-- Display the interested status as text -->
+  <span class="mr-1" *ngIf="flatData.interested">Interested</span>
 
+  <!-- Heart icon -->
+  <i
+    class="fa-heart fa-lg cursor-pointer"
+    [ngClass]="{ 'fas': flatData.interested, 'far': !flatData.interested }"
+    (click)="onHeartButtonClick(flatData)"
+  ></i>
+
+  <!-- Display the interestedCount -->
+  <span class="ml-1">{{ flatData.interestedCount }}</span>
+</div>
+</div>
       <div class="row g-0">
         <!-- Left side: Image -->
         <div class="col-md-2 d-flex align-items-center">

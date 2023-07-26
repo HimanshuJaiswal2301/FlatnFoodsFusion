@@ -1,4 +1,5 @@
-.black-border{
+
+black-border{
     border: 0px solid black;
 }
 
@@ -35,7 +36,7 @@ table {
     height: 100%;
     object-fit: cover;
   }
-
+/* 
   .price-slider {
     width: 100%;
   }
@@ -51,7 +52,7 @@ table {
 
   .visible-button:hover {
     opacity: 1;
-  }
+  } */
 
   .modal {
     display: none; 

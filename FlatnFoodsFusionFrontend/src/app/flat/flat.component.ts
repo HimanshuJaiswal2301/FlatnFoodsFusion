@@ -11,6 +11,8 @@ import { FlatService } from '../services/flat/flat.service';
 export class FlatComponent {
   @ViewChild('fileInput') fileInput: any;
 
+  searchQuery: string = '';
+  searchResults: Flat[] = [];
   public searchTerm: String = '';
   totalItem: any;
   constructor(private flatService: FlatService) {}
@@ -20,9 +22,9 @@ export class FlatComponent {
       this.totalItem = res.length;
     });
   }
-  search(event: any) {
-    this.searchTerm = (event.target as HTMLInputElement).value;
-    console.log(this.searchTerm);
-    this.flatService.search.next(this.searchTerm);
-  }
+  // search(event: any) {
+  //   this.searchTerm = (event.target as HTMLInputElement).value;
+  //   console.log(this.searchTerm);
+  //   this.flatService.search.next(this.searchTerm);
+  // }
 }

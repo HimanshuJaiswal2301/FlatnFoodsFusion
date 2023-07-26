@@ -4,18 +4,18 @@ import { Flat } from '../model/Flat';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Lightbox } from 'ngx-lightbox'; // Import Lightbox from ngx-lightbox
 
-
-
 @Component({
   selector: 'app-subflat',
   templateUrl: './subflat.component.html',
-  styleUrls: ['./subflat.component.css']
+  styleUrls: ['./subflat.component.css'],
 })
 export class SubflatComponent implements OnInit {
   constructor(private _flat: FlatService) {} // Inject Lightbox service
 
   flats: Flat[] = [];
-  flatData: any = {}; // Variable to store new form data
+  flatData: any = {
+
+  }; // Variable to store new form data
   isModalOpen: boolean = false;
   zoomedImageUrl: string = '';
 
@@ -40,7 +40,11 @@ export class SubflatComponent implements OnInit {
   getFlats() {
     this._flat.getFlats().subscribe(
       (res) => {
-        this.flats = res;
+        this.flats = res.map((flat: Flat) => ({
+          ...flat,
+          interested: false,
+          interestedCount: 0,
+        }));
         this.flats.reverse();
         console.log(res);
       },
@@ -49,7 +53,7 @@ export class SubflatComponent implements OnInit {
       }
     );
   }
-
+  
   // Method to add new entry when form is submitted
   onSubmit() {
     // Assuming you are using a form with [(ngModel)]="flatData" for input fields
@@ -58,7 +62,7 @@ export class SubflatComponent implements OnInit {
     this.flatData = {}; // Clear the flatData object for a fresh form submission
   }
 
-  onCustomFilterSubmit(startPrice: number, endPrice: number){
+  onCustomFilterSubmit(startPrice: number, endPrice: number) {
     this._flat.customFilter(startPrice, endPrice).subscribe(
       (res) => {
         this.flats = res;
@@ -66,9 +70,8 @@ export class SubflatComponent implements OnInit {
       },
       (error: HttpErrorResponse) => {
         console.log(error);
-        
       }
-    )
+    );
   }
 
   openImageModal(imageUrl: string) {
@@ -92,6 +95,20 @@ export class SubflatComponent implements OnInit {
     // Update this.zoomedImageUrl to the URL of the next image
     // You need to implement this logic based on your specific data structure.
   }
-  
+
+  // Toggle the interest status and update the interest count
+  onHeartButtonClick(flatData: Flat) {
+    flatData.interested = !flatData.interested;
+  flatData.interestedCount += flatData.interested ? 1 : -1;
+
+  //  // Update the backend with the new interestedCount
+  //  this._flat.updateFlatInterest(flatData).subscribe(
+  //   (data) => {
+  //     console.log('Interest updated successfully', data);
+  //   },
+  //   (error) => {
+  //     console.log('Error updating interest', error);
+  //   }
+  // );
+  }
 }
-4

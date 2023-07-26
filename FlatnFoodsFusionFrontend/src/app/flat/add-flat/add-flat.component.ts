@@ -12,7 +12,7 @@ export class AddFlatComponent implements OnInit {
   flatData = {
     description: '',
     address: '',
-    contact: null,
+    contact: '',
     price: null,
     type: '',
     image: '',
@@ -52,7 +52,7 @@ export class AddFlatComponent implements OnInit {
         this.flatData = {
           description: '',
           address: '',
-          contact: null,
+          contact: '',
           price: null,
           type: '',
           image: '',

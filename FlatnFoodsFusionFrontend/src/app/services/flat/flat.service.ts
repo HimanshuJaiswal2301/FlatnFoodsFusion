@@ -9,39 +9,44 @@ import { Flat } from 'src/app/model/Flat';
 export class FlatService {
 
   baseUrl= 'http://localhost:8080/flat';
-  constructor( private http:HttpClient) { }
-  public search = new BehaviorSubject<String>("");
-  // getFlats(){
-  //   return this.http.get<Flat[]>(this.baseUrl);
-  // }
-  postFlat(flat:any){
+  constructor(private http: HttpClient) { }
+  public search = new BehaviorSubject<string>("");
+
+  postFlat(flat: any) {
     const token = localStorage.getItem('token');
-    return this.http.post(`${this.baseUrl}/add`,flat ,{
+    return this.http.post(`${this.baseUrl}/add`, flat, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
   }
- 
+
   getFlats(): Observable<any> {
     const token = localStorage.getItem('token');
-    return this.http.get(`${this.baseUrl}/all` ,{
+    return this.http.get(`${this.baseUrl}/all`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
   }
 
-  //  public addFlat(flat: any){
-  //   return this.http.post(`${baseUrl}/add`,flat);
-  // }
-
-  customFilter(startPrice: number, endPrice: number): Observable<any>{
+  customFilter(startPrice: number, endPrice: number): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(`${this.baseUrl}/filter/custom/${startPrice}/${endPrice}`, {
       headers: {
         Authorization: `Bearer ${token}`,
-      }
-    })
+      },
+    });
+  }
+
+  searchFlats(query: string): Observable<any> {
+    // You can implement the search logic here using the 'query' parameter
+    // For now, let's just pass the query to the backend and handle the search there
+    const token = localStorage.getItem('token');
+    return this.http.get(`${this.baseUrl}/search/${query}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
   }
 }

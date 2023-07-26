@@ -6,3 +6,11 @@ head{
     margin-left: 5% ;
     background-color: yellowgreen;
 }
+
+.navbar-title {
+    font-family: inherit; /* Use the default font family for the title */
+    font-size: inherit; /* Use the default font size for the title */
+    font-weight: inherit; /* Use the default font weight for the title */
+    color: inherit; /* Use the default color for the title */
+    text-decoration: none; /* Remove any text decoration, if applied by Font Awesome */
+  }
