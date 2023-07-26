@@ -33,6 +33,7 @@ import { FilterPipe } from './filter.pipe';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { LightboxModule } from 'ngx-lightbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { TimeAgoPipe } from './time-ago.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +47,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     SubflatComponent,
     AddFlatComponent,
     FilterPipe,
+    TimeAgoPipe,
     
   ],
   imports: [

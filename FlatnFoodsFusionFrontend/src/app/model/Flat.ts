@@ -6,5 +6,5 @@ export class Flat {
   type: String = '';
   image: String = '';
   food: String = '';
-  posted: String='';
+  posted: any;
 }

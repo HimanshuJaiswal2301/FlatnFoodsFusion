@@ -4,7 +4,7 @@ import { Flat } from '../model/Flat';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Lightbox } from 'ngx-lightbox'; // Import Lightbox from ngx-lightbox
 
- // Import Lightbox from ngx-lightbox
+
 
 @Component({
   selector: 'app-subflat',
@@ -94,3 +94,4 @@ export class SubflatComponent implements OnInit {
   }
   
 }
+4
