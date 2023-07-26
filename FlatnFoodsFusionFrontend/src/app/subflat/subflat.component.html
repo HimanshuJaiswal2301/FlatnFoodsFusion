@@ -29,6 +29,7 @@
 <div class="container-fluid">
   <!-- Loop through the flatEntries array -->
   <ng-container *ngFor="let flatData of flats; index as i">
+    
     <!-- Add a border and background color to the container -->
     <div class="border rounded p-3 bg-light my-3">
       <!-- Description -->
@@ -40,7 +41,7 @@
         <!-- Left side: Image -->
         <div class="col-md-2 d-flex align-items-center">
           <div class="image-block">
-            <img src="{{ flatData.image }}" alt="Flat Image" class="flats">
+            <img src="{{ flatData.image }}" alt="Flat Image" class="flats"  (click)="openImageModal(flatData.image.toString())" >
           </div>
         </div>
 
@@ -100,3 +101,26 @@
     </div>
   </ng-container>
 </div>
+
+<!-- Image Modal -->
+<div class="modal" [ngClass]="{'show': isModalOpen}">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Close icon -->
+      <button type="button" class="close" (click)="closeImageModal()">&times;</button>
+      <!-- Zoomed Image -->
+      <div class="modal-body">
+        <div class="image-container">
+          <button class="nav-button left-button" (click)="showPreviousImage()">&lt;</button>
+          <img [src]="zoomedImageUrl" alt="Zoomed Image" class="zoomed-image">
+          <button class="nav-button right-button" (click)="showNextImage()">&gt;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+ 
+  

@@ -31,8 +31,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { FilterPipe } from './filter.pipe';
 
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatSliderModule } from '@angular/material/slider';
-
+import { LightboxModule } from 'ngx-lightbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,8 +63,9 @@ import { MatSliderModule } from '@angular/material/slider';
     MatTableModule,
     MatButtonModule,
     MatInputModule,
-    MatSliderModule,
+    LightboxModule,
     MatExpansionModule,
+    MatFormFieldModule,
     
     
   

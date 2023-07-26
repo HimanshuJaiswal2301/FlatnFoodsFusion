@@ -7,82 +7,94 @@
     <div class="row">
       <div class="col-md-8 offset-md-2">
         <form class="example-form" (ngSubmit)="onSubmit()">
-          <mat-form-field class="w100">
-            <mat-label>City</mat-label>
-            <mat-select
-              [(ngModel)]="flatData.description"
-              name="description"
-              placeholder="Select City"
-              class="text-black"
-            >
-              <mat-option value="Ahmedabad">Ahmedabad</mat-option>
-              <mat-option value="Bengaluru">Bengaluru</mat-option>
-              <mat-option value="Chandigarh">Chandigarh</mat-option>
-              <mat-option value="Delhi">Delhi</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field class="w100">
-            <mat-label>Address</mat-label>
+          <div class="form-group">
+            <mat-form-field class="w100">
+              <mat-label>City</mat-label>
+              <mat-select
+                [(ngModel)]="flatData.description"
+                name="description"
+                placeholder="Select City"
+                class="text-black"
+              >
+                <mat-option value="Ahmedabad">Ahmedabad</mat-option>
+                <mat-option value="Bengaluru">Bengaluru</mat-option>
+                <mat-option value="Chandigarh">Chandigarh</mat-option>
+                <mat-option value="Delhi">Delhi</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field class="w100">
+              <mat-label>Address</mat-label>
+              <input
+                matInput
+                [(ngModel)]="flatData.address"
+                name="address"
+                placeholder="Address"
+                class="text-black"
+              />
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field class="w100">
+              <mat-label>Contact</mat-label>
+              <input
+                matInput
+                [(ngModel)]="flatData.contact"
+                name="contact"
+                placeholder="Contact"
+                class="text-black"
+              />
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field class="w100">
+              <mat-label>Price</mat-label>
+              <input
+                matInput
+                [(ngModel)]="flatData.price"
+                name="price"
+                placeholder="Price"
+                class="text-black"
+              />
+            </mat-form-field>
+          </div>
+          <div class="form-group custom-file">
             <input
-              matInput
-              [(ngModel)]="flatData.address"
-              name="address"
-              placeholder="Address"
-              class="text-black"
-            />
-          </mat-form-field>
-          <mat-form-field class="w100">
-            <mat-label>Contact</mat-label>
-            <input
-              matInput
-              [(ngModel)]="flatData.contact"
-              name="contact"
-              placeholder="Contact"
-              class="text-black"
-            />
-          </mat-form-field>
-          <mat-form-field class="w100">
-            <mat-label>Price</mat-label>
-            <input
-              matInput
-              [(ngModel)]="flatData.price"
-              name="price"
-              placeholder="Price"
-              class="text-black"
-            />
-          </mat-form-field>
-          <mat-form-field class="w100">
-            <mat-label>Image</mat-label>
-            <input
-              matInput
+              type="file"
+              id="imageInput"
+              class="custom-file-input"
               [(ngModel)]="flatData.image"
-              name="image"
-              placeholder="Image"
-              class="text-black"
+              (change)="onImageSelected($event)"
             />
-          </mat-form-field>
-          <mat-form-field class="w100">
-            <mat-label>Food</mat-label>
-            <input
-              matInput
-              [(ngModel)]="flatData.food"
-              name="food"
-              placeholder="Food Nearby"
-              class="text-black"
-            />
-          </mat-form-field>
-          <mat-form-field class="w100">
-            <mat-label>Type</mat-label>
-            <mat-select
-              [(ngModel)]="flatData.type"
-              name="type"
-              placeholder="Select Type"
-              class="text-black"
-            >
-              <mat-option value="Rent">Rent</mat-option>
-              <mat-option value="Sell">Sell</mat-option>
-            </mat-select>
-          </mat-form-field>
+            <label for="imageInput" class="custom-file-label btn btn-primary">Choose Image</label>
+          </div>
+          <div class="form-group">
+            <mat-form-field class="w100">
+              <mat-label>Food</mat-label>
+              <input
+                matInput
+                [(ngModel)]="flatData.food"
+                name="food"
+                placeholder="Food Nearby"
+                class="text-black"
+              />
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field class="w100">
+              <mat-label>Type</mat-label>
+              <mat-select
+                [(ngModel)]="flatData.type"
+                name="type"
+                placeholder="Select Type"
+                class="text-black"
+              >
+                <mat-option value="Rent">Rent</mat-option>
+                <mat-option value="Sell">Sell</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
 
           <div class="container text-center mt-5">
             <button

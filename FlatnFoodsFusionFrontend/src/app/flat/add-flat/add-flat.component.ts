@@ -17,9 +17,11 @@ export class AddFlatComponent implements OnInit {
     type: '',
     image: '',
     food: '',
-    posted: ''
+    posted: '',
   };
   flats: any;
+  selectedImage: File;
+  selectedImageDataURL: string;
 
   constructor(
     private _flat: FlatService,
@@ -29,8 +31,22 @@ export class AddFlatComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  onImageSelected(event: any) {
+    const files: FileList = event.target.files;
+    if (files && files.length > 0) {
+      this.selectedImage = files[0];
+
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.selectedImageDataURL = e.target.result;
+      };
+      reader.readAsDataURL(this.selectedImage);
+    }
+  }
+
   onSubmit() {
     this.flatData.posted = new Date().toISOString();
+    this.flatData.image = this.selectedImageDataURL ? this.selectedImageDataURL : '';
     this._flat.postFlat(this.flatData).subscribe(
       (data: any) => {
         this.flatData = {
@@ -41,8 +57,9 @@ export class AddFlatComponent implements OnInit {
           type: '',
           image: '',
           food: '',
-          posted:''
+          posted: '',
         };
+
         console.log(data);
         this.router.navigate(['/city']);
         this.toastr.success('Successfully Added the flat!');
