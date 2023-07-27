@@ -4,6 +4,7 @@ import { Flat } from 'src/app/model/Flat';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { FlatService } from 'src/app/services/flat/flat.service';
 import { ShareddataService } from 'src/app/services/sharedData/shared-data.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-sidebar',
@@ -17,7 +18,8 @@ export class SidebarComponent implements OnInit {
   constructor(
     private flatService: FlatService,
     private authService: AuthService,
-    private sharedDataService: ShareddataService
+    private sharedDataService: ShareddataService,
+    private location: Location
   ) {}
   ngOnInit(): void {
     this.sharedDataService.userDetailsObservable.subscribe((res) => {
@@ -41,12 +43,21 @@ export class SidebarComponent implements OnInit {
     );
   }
 
-  onSearch(cityName: string){
-    this.flatService.flatsByCityName(cityName).subscribe(
-      (res) => {
-        this.flats = res;
-        this.sharedDataService.setSearchResults(res);
-      }
-    )
+  onSearch(cityName: string) {
+    if (cityName === 'All') {
+      this.location.go('/city');
+      window.location.reload();
+    } else {
+      this.flatService.flatsByCityName(cityName).subscribe(
+        (res) => {
+          this.flats = res;
+          this.sharedDataService.setSearchResults(res);
+        },
+        (error: HttpErrorResponse) => {
+          console.log(error);
+        }
+      );
+    }
   }
+
 }
