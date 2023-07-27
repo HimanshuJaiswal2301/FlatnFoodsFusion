@@ -6,6 +6,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { DashboardComponent } from './city/dashboard/dashboard.component';
 import { FlatComponent } from './flat/flat.component';
 import { AddFlatComponent } from './flat/add-flat/add-flat.component';
+import { AboutusComponent } from './pages/aboutus/aboutus.component';
 
 
 const routes: Routes = [
@@ -15,9 +16,8 @@ const routes: Routes = [
   { path: 'register', component: SignupComponent },
   {path: 'city' , component: DashboardComponent},
     {path: 'add-flat' , component: AddFlatComponent},
-  {path: 'flat' , component: FlatComponent,
-    
-},
+  {path: 'flat' , component: FlatComponent},
+  {path: 'aboutus', component: AboutusComponent},
   
 ];
 

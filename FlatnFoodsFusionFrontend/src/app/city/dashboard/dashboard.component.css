@@ -92,3 +92,8 @@
     margin-top: 20px;
   }
 }
+
+.dash-page {
+  background: url('https://getstackhost.com/wp-content/uploads/2022/07/Stories-B1.png') no-repeat center center fixed;
+  background-size: cover;
+}

@@ -32,6 +32,7 @@ import { FilterPipe } from './filter.pipe';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TimeAgoPipe } from './time-ago.pipe';
+import { AboutusComponent } from './pages/aboutus/aboutus.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +47,7 @@ import { TimeAgoPipe } from './time-ago.pipe';
     AddFlatComponent,
     FilterPipe,
     TimeAgoPipe,
+    AboutusComponent,
     
   ],
   imports: [

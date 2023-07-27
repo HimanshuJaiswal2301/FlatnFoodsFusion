@@ -11,9 +11,14 @@ import { ShareddataService } from '../services/sharedData/shared-data.service';
   styleUrls: ['./subflat.component.css'],
 })
 export class SubflatComponent implements OnInit {
-onResetFilter() {
-throw new Error('Method not implemented.');
-}
+  onResetFilter() {
+    // Reset the startPrice and endPrice to default values
+    this.startPrice = null;
+    this.endPrice = null;
+
+    // Reload the page to /city
+    window.location.href = '/city';
+  }
   constructor(private _flat: FlatService, private sharedDataService: ShareddataService) {} // Inject Lightbox service
 
   flats: Flat[] = [];
