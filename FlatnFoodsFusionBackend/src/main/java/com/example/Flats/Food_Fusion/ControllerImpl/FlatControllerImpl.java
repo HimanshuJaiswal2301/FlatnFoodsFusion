@@ -26,11 +26,7 @@ public class FlatControllerImpl {
         return new ResponseEntity<>(flats, HttpStatus.OK);
     }
 
-    @GetMapping("/flat/{id}")
-    public ResponseEntity<Flat> getFlatById(@PathVariable("id")int id){
-        Flat flat = flatService.findFlatById(id);
-        return new ResponseEntity<>(flat,HttpStatus.OK);
-    }
+
 
     @PostMapping("/add")
 
@@ -46,10 +42,18 @@ public class FlatControllerImpl {
         List<Flat> flats = flatService.filterCustom(startPrice, endPrice);
         return new ResponseEntity<>(flats, HttpStatus.OK);
     }
-    @GetMapping("/flat/{id}")
-    public ResponseEntity<Flat> getFlatById(@PathVariable("id") Integer id){
-        Flat flat = flatService.getFlatById(id);
-        return new ResponseEntity<>(flat, HttpStatus.OK);
+    @Transactional
+    @GetMapping("/userFlats/{id}")
+    public ResponseEntity<List<Flat>> getUserFlatsById(@PathVariable("id") Integer id){
+        List<Flat> flats = flatService.getUserFlatsById(id);
+        return new ResponseEntity<>(flats, HttpStatus.OK);
+    }
+
+    @Transactional
+    @GetMapping("/filter/city/{cityName}")
+    public ResponseEntity<List<Flat>> getFlatsByCity(@PathVariable("cityName") String cityName){
+        List<Flat> flats = flatService.getFlatsByCity(cityName);
+        return new ResponseEntity<>(flats, HttpStatus.OK);
     }
 
 }

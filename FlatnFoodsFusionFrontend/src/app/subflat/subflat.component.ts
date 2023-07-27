@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FlatService } from '../services/flat/flat.service';
 import { Flat } from '../model/Flat';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Lightbox } from 'ngx-lightbox'; // Import Lightbox from ngx-lightbox
+import { ShareddataService } from '../services/sharedData/shared-data.service';
+
 
 @Component({
   selector: 'app-subflat',
@@ -10,9 +11,10 @@ import { Lightbox } from 'ngx-lightbox'; // Import Lightbox from ngx-lightbox
   styleUrls: ['./subflat.component.css'],
 })
 export class SubflatComponent implements OnInit {
-  constructor(private _flat: FlatService) {} // Inject Lightbox service
+  constructor(private _flat: FlatService, private sharedDataService: ShareddataService) {} // Inject Lightbox service
 
   flats: Flat[] = [];
+  allFlats: Flat[] = [];
   flatData: any = {
 
   }; // Variable to store new form data
@@ -33,8 +35,36 @@ export class SubflatComponent implements OnInit {
   startPrice: number;
   endPrice: number;
   priceRange: number[] = [0, 100000];
+  userDetails: any;
+  userId: number;
+
   ngOnInit(): void {
     this.getFlats();
+    this.sharedDataService.userDetailsObservable.subscribe((res) => {
+      this.userDetails = res;
+      this.userId = this.userDetails[0]?.id;
+    });
+    this.sharedDataService.searchResultsObservable.subscribe(
+      (res) => {
+        this.flats = res;
+        console.log(this.flats);
+        
+      }
+    )
+  }
+
+  onFlatByUserIdFilter() {
+    this._flat.flatsByUserId(this.userId).subscribe(
+      (res) => {
+        console.log(res);
+
+        this.flats = res;
+        this.flats.reverse();
+      },
+      (error: HttpErrorResponse) => {
+        console.log(error);
+      }
+    );
   }
 
   getFlats() {
@@ -45,6 +75,7 @@ export class SubflatComponent implements OnInit {
           interested: false,
           interestedCount: 0,
         }));
+        this.allFlats = this.flats;
         this.flats.reverse();
         console.log(res);
       },

@@ -1,4 +1,5 @@
 export class Flat {
+  userId: number;
   description: String = '';
   price: number;
   address: String = '';

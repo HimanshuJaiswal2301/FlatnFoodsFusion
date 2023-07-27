@@ -15,8 +15,9 @@
       </div>
 
       <div class="search-flats">
-        <input type="search" class="form-control"  placeholder="Search Flats" />
+        <input type="search" class="form-control" placeholder="Search Flats" [(ngModel)]="searchQuery" (input)="onSearch()" />
       </div>
+      
     </div>
 
     <!-- Area to display all the flats -->

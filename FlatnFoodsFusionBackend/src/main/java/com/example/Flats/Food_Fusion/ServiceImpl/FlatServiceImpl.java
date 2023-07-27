@@ -24,9 +24,7 @@ public class FlatServiceImpl {
         return flatRepo.findAll();
     }
 
-    public Flat findFlatById(int id){
-        return flatRepo.findFlatFlatById(id);
-    }
+
     public void deleteFlatById(int id){
         flatRepo.deleteFlatById(id);
     }
@@ -36,8 +34,15 @@ public class FlatServiceImpl {
         return flats;
     }
 
-    public Flat getFlatById(Integer id) {
-        Flat flat = flatRepo.findFlatFlatById(id);
-        return flat;
+
+
+    public List<Flat> getUserFlatsById(Integer id) {
+        List<Flat> flats= flatRepo.getUserFlatsById(id);
+        return flats;
+    }
+
+    public List<Flat> getFlatsByCity(String cityName) {
+        List<Flat> flats = flatRepo.getFlatsByCity(cityName);
+        return flats;
     }
 }

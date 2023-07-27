@@ -20,6 +20,7 @@ public class Flat implements Serializable {
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private Integer userId;
     private String description;
     private String address;
     private Integer price;
@@ -29,4 +30,5 @@ public class Flat implements Serializable {
     @Lob
     private String image;
     private String posted;
+
 }

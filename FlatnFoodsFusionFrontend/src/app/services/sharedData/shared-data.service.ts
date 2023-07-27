@@ -21,15 +21,21 @@ export class ShareddataService {
     this.userDetailsSetSource.next(true);
   }
 
-  // userRoleSet$ = this.userDetailsSetSource.asObservable();
-  // private userRoleSubject = new BehaviorSubject<any>(
-  //   JSON.parse(localStorage.getItem('role') as string)
-  // );
-  // public userRoleObservable = this.userDetailsSubject.asObservable();
+  private searchResultsSubject = new BehaviorSubject<any>({
+    userId : '',
+    description: '',
+    address: '',
+    contact: '',
+    price: null,
+    type: '',
+    image: '',
+    food: '',
+    posted: '',
+  });
+  public searchResultsObservable = this.searchResultsSubject.asObservable();
+  setSearchResults(flats: any): void{
+    this.searchResultsSubject.next(flats);
+  }
 
-  // setUserRole(role: any): void {
-  //   localStorage.setItem('role', JSON.stringify(role));
-  //   this.userRoleSubject.next(role);
-  //   this.userDetailsSetSource.next(true);
-  // }
+
 }

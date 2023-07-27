@@ -49,4 +49,26 @@ export class FlatService {
       },
     });
   }
+
+  flatsByUserId(id: number): Observable<any> {
+    // You can implement the search logic here using the 'query' parameter
+    // For now, let's just pass the query to the backend and handle the search there
+    const token = localStorage.getItem('token');
+    return this.http.get(`${this.baseUrl}/userFlats/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+
+  flatsByCityName(cityName: string): Observable<any> {
+    // You can implement the search logic here using the 'query' parameter
+    // For now, let's just pass the query to the backend and handle the search there
+    const token = localStorage.getItem('token');
+    return this.http.get(`${this.baseUrl}/filter/city/${cityName}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
 }

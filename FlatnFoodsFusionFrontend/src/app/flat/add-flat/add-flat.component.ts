@@ -9,7 +9,9 @@ import { FlatService } from 'src/app/services/flat/flat.service';
   styleUrls: ['./add-flat.component.css'],
 })
 export class AddFlatComponent implements OnInit {
+  userDetails = JSON.parse(localStorage.getItem('userDetails'));
   flatData = {
+    userId : this.userDetails[0].id,
     description: '',
     address: '',
     contact: '',
@@ -50,6 +52,7 @@ export class AddFlatComponent implements OnInit {
     this._flat.postFlat(this.flatData).subscribe(
       (data: any) => {
         this.flatData = {
+          userId: this.userDetails[0].id,
           description: '',
           address: '',
           contact: '',
