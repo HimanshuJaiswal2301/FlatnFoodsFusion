@@ -18,8 +18,7 @@
 
 /* Style the sidebar component */
 .sidebar {
-  flex: 0.5;
-  padding: 5px;
+  flex: 0.4;
   background-color: #1a1a1a;
   color: #fff;
   border-radius: 12px;
@@ -27,6 +26,7 @@
 
 /* Style the flat component */
 .content {
+  /* background: url("https://images.saymedia-content.com/.image/t_share/MTkyOTkyMzE2OTQ3MjQ0MjUz/website-background-templates.jpg"); */
   flex: 3;
   padding: 20px;
   background-color: #f2f2f2;
